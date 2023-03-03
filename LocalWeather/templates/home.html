@@ -5,8 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Weather</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 <body>
-    <p>{{ dataPage }}</p>
+
+    <!-- Show Period in the table form -->
+    <table class="table table-striped">
+            {% for x in periods %}
+            <tr>
+                <th>{{x.number}}</th>
+                <td>{{x.name}}</td>
+                <td>{{x.startTime}}</td>
+                <td>{{x.endTime}}</td>
+                <td>{{x.isDaytime}}</td>
+                <td>{{x.temperature}}</td>
+                <td>{{x.temperatureUnit}}</td>
+                <td>{{x.temperatureTrend}}</td>
+                <td>{{x.probabilityOfPrecipitation}}</td>
+                <td>{{x.dewpoint}}</td>
+                <td>{{x.relativeHumidity}}</td>
+                <td>{{x.windSpeed}}</td>
+                <td>{{x.windDirection}}</td>
+                <td>{{x.icon}}</td>
+                <td>{{x.shortForecast}}</td>
+                <td>{{x.detailedForecast}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+
+
+    <!-- Show prop -->
+    <!-- <p>{{ properties }}</p> -->
+
+    <!-- Show periods -->
+    <!-- <p>{{ periods }}</p> -->
+    
+    <!-- Simply output the whole information -->
+    <!-- <p>{{ dataPage }}</p> -->
 </body>
 </html>
